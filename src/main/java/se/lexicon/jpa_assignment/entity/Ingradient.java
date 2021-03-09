@@ -1,9 +1,13 @@
 package se.lexicon.jpa_assignment.entity;
 
+import javax.persistence.*;
 import java.util.Objects;
-
+@Entity
 public class Ingradient {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(nullable = false,length = 255,unique = true)
     private String ingradientName;
 
     public Ingradient() {
@@ -26,12 +30,12 @@ public class Ingradient {
         this.id = id;
     }
 
-    public String getIngradient() {
+    public String getIngradientName() {
         return ingradientName;
     }
 
-    public void setIngradient(String ingradient) {
-        this.ingradientName = ingradient;
+    public void setIngradientName(String ingradient) {
+        this.ingradientName = ingradientName;
     }
 
     @Override
